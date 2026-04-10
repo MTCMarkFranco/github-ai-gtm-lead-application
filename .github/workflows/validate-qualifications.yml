@@ -1,0 +1,407 @@
+name: Validate Qualifications
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-qualifications:
+    name: 🔍 Validate Qualifications
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: "Check 1: 7+ years in sales, pre-sales, or technical consulting"
+        run: |
+          echo "::group::📋 Requirement: 7+ years in sales, pre-sales, or technical consulting"
+          echo ""
+          echo "┌─────────────────────────────────────────────────────────────┐"
+          echo "│  REQUIREMENT: 7+ years in sales, pre-sales, or technical   │"
+          echo "│               consulting                                   │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  EVIDENCE:                                                 │"
+          echo "│  • 19 years at Microsoft as Principal Solution Engineer    │"
+          echo "│  • Role is pre-sales / technical consulting by definition  │"
+          echo "│  • 19 years exceeds 7-year minimum by 171%                │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  YEARS REQUIRED: 7    YEARS ACTUAL: 19                    │"
+          echo "│  ✅ PASS                                                   │"
+          echo "└─────────────────────────────────────────────────────────────┘"
+          echo ""
+          echo "::endgroup::"
+          echo "::notice title=Check 1 PASSED::7+ years pre-sales/consulting — 19 years at Microsoft as Principal Solution Engineer ✅"
+
+          REQUIRED=7
+          ACTUAL=19
+          if [ "$ACTUAL" -ge "$REQUIRED" ]; then
+            echo "CHECK1=PASS" >> "$GITHUB_ENV"
+          else
+            echo "CHECK1=FAIL" >> "$GITHUB_ENV"
+            exit 1
+          fi
+
+      - name: "Check 2: 5+ years selling developer automation, AI, CI/CD, DevOps"
+        run: |
+          echo "::group::📋 Requirement: 5+ years selling developer automation, AI, CI/CD, DevOps"
+          echo ""
+          echo "┌─────────────────────────────────────────────────────────────┐"
+          echo "│  REQUIREMENT: 5+ years selling developer automation, AI,   │"
+          echo "│               CI/CD, DevOps                                │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  EVIDENCE:                                                 │"
+          echo "│  • 19 years at Microsoft delivering AI, DevOps, and        │"
+          echo "│    developer automation solutions                          │"
+          echo "│  • Led many AI engagements in past year alone              │"
+          echo "│  • Deep expertise in CI/CD pipelines and DevOps practices  │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  YEARS REQUIRED: 5    YEARS ACTUAL: 19                    │"
+          echo "│  ✅ PASS                                                   │"
+          echo "└─────────────────────────────────────────────────────────────┘"
+          echo ""
+          echo "::endgroup::"
+          echo "::notice title=Check 2 PASSED::5+ years AI/DevOps sales — 19 years delivering AI, DevOps, and developer automation solutions ✅"
+
+          REQUIRED=5
+          ACTUAL=19
+          if [ "$ACTUAL" -ge "$REQUIRED" ]; then
+            echo "CHECK2=PASS" >> "$GITHUB_ENV"
+          else
+            echo "CHECK2=FAIL" >> "$GITHUB_ENV"
+            exit 1
+          fi
+
+      - name: "Check 3: 5+ years selling/co-selling cloud infrastructure"
+        run: |
+          echo "::group::📋 Requirement: 5+ years selling/co-selling cloud infrastructure (Azure, AWS, GCP)"
+          echo ""
+          echo "┌─────────────────────────────────────────────────────────────┐"
+          echo "│  REQUIREMENT: 5+ years selling/co-selling cloud            │"
+          echo "│               infrastructure (Azure, AWS, GCP)             │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  EVIDENCE:                                                 │"
+          echo "│  • Azure Solutions Architect Expert certified              │"
+          echo "│  • 19 years on the Azure platform                         │"
+          echo "│  • Led competitive cloud displacement engagements          │"
+          echo "│  • Deep multi-cloud positioning experience                 │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  YEARS REQUIRED: 5    YEARS ACTUAL: 19                    │"
+          echo "│  ✅ PASS                                                   │"
+          echo "└─────────────────────────────────────────────────────────────┘"
+          echo ""
+          echo "::endgroup::"
+          echo "::notice title=Check 3 PASSED::5+ years cloud infrastructure — Azure Solutions Architect Expert, 19 years on Azure platform ✅"
+
+          REQUIRED=5
+          ACTUAL=19
+          if [ "$ACTUAL" -ge "$REQUIRED" ]; then
+            echo "CHECK3=PASS" >> "$GITHUB_ENV"
+          else
+            echo "CHECK3=FAIL" >> "$GITHUB_ENV"
+            exit 1
+          fi
+
+      - name: "Check 4: Solution architecture design experience"
+        run: |
+          echo "::group::📋 Requirement: Solution architecture design experience"
+          echo ""
+          echo "┌─────────────────────────────────────────────────────────────┐"
+          echo "│  REQUIREMENT: Solution architecture design experience      │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  EVIDENCE:                                                 │"
+          echo "│  • Lead Architect at Microsoft Innovation Hub              │"
+          echo "│  • 127+ GitHub repos demonstrating hands-on architecture   │"
+          echo "│  • Led Architecture Design Sessions for enterprise         │"
+          echo "│    customers                                               │"
+          echo "│  • Designed production AI agent systems end-to-end         │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  ✅ PASS — Extensive architecture leadership               │"
+          echo "└─────────────────────────────────────────────────────────────┘"
+          echo ""
+          echo "::endgroup::"
+          echo "::notice title=Check 4 PASSED::Solution architecture — Lead Architect at Innovation Hub, 127+ repos, enterprise Architecture Design Sessions ✅"
+
+          echo "CHECK4=PASS" >> "$GITHUB_ENV"
+
+      - name: "Check 5: ROI-driven sales experience"
+        run: |
+          echo "::group::📋 Requirement: ROI-driven sales experience"
+          echo ""
+          echo "┌─────────────────────────────────────────────────────────────┐"
+          echo "│  REQUIREMENT: ROI-driven sales experience                  │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  EVIDENCE:                                                 │"
+          echo "│  • Generated measurable monthly Azure consumption revenue  │"
+          echo "│  • Identified multi-million dollar AI value pipelines      │"
+          echo "│  • Produced KPI-driven business cases for enterprise       │"
+          echo "│    customers                                               │"
+          echo "│  • Quantified ROI for AI adoption across verticals         │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  ✅ PASS — Proven revenue impact                           │"
+          echo "└─────────────────────────────────────────────────────────────┘"
+          echo ""
+          echo "::endgroup::"
+          echo "::notice title=Check 5 PASSED::ROI-driven sales — Measurable Azure consumption revenue, multi-million dollar AI pipelines, KPI-driven business cases ✅"
+
+          echo "CHECK5=PASS" >> "$GITHUB_ENV"
+
+      - name: "Check 6: High technical fluency in AI, developer platforms, cloud"
+        run: |
+          echo "::group::📋 Requirement: High technical fluency in AI, developer platforms, cloud"
+          echo ""
+          echo "┌─────────────────────────────────────────────────────────────┐"
+          echo "│  REQUIREMENT: High technical fluency in AI, developer      │"
+          echo "│               platforms, cloud                             │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  EVIDENCE:                                                 │"
+          echo "│  • 127+ GitHub repos — not just talk, but shipped code     │"
+          echo "│  • MCP Protocol implementations (the protocol powering     │"
+          echo "│    GitHub Copilot)                                         │"
+          echo "│  • Agentic AI systems with Azure AI Foundry, OpenAI,      │"
+          echo "│    Semantic Kernel, LangChain                              │"
+          echo "│  • Languages: C#, Python, TypeScript                      │"
+          echo "│  • Cloud: Azure Solutions Architect Expert certified       │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  ✅ PASS — Exceptionally deep technical fluency            │"
+          echo "└─────────────────────────────────────────────────────────────┘"
+          echo ""
+          echo "::endgroup::"
+          echo "::notice title=Check 6 PASSED::Technical fluency — 127+ repos, MCP Protocol, Agentic AI, Azure AI Foundry, OpenAI, Semantic Kernel, C#/Python/TypeScript ✅"
+
+          echo "CHECK6=PASS" >> "$GITHUB_ENV"
+
+      - name: "Check 7: Strong leadership and stakeholder engagement"
+        run: |
+          echo "::group::📋 Requirement: Strong leadership and stakeholder engagement"
+          echo ""
+          echo "┌─────────────────────────────────────────────────────────────┐"
+          echo "│  REQUIREMENT: Strong leadership and stakeholder engagement │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  EVIDENCE:                                                 │"
+          echo "│  • Featured speaker at AI Tour Toronto                    │"
+          echo "│  • Mentored peer architects across the organization       │"
+          echo "│  • Created reusable assets adopted Americas-wide          │"
+          echo "│  • Led executive business envisioning sessions            │"
+          echo "│  • Cross-functional stakeholder alignment expertise       │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  ✅ PASS — Demonstrated thought leadership                 │"
+          echo "└─────────────────────────────────────────────────────────────┘"
+          echo ""
+          echo "::endgroup::"
+          echo "::notice title=Check 7 PASSED::Leadership — AI Tour Toronto speaker, mentored architects, Americas-wide reusable assets, executive envisioning ✅"
+
+          echo "CHECK7=PASS" >> "$GITHUB_ENV"
+
+      - name: "Check 8: Bachelor's degree or equivalent experience"
+        run: |
+          echo "::group::📋 Requirement: Bachelor's degree or equivalent experience"
+          echo ""
+          echo "┌─────────────────────────────────────────────────────────────┐"
+          echo "│  REQUIREMENT: Bachelor's degree or equivalent experience   │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  EVIDENCE:                                                 │"
+          echo "│  • Sheridan College — Software Engineering                 │"
+          echo "│  • 32 years of industry experience                        │"
+          echo "│  • Continuous learning demonstrated through 127+ repos    │"
+          echo "│  • Microsoft certifications (Azure Solutions Architect)   │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  ✅ PASS — Education + 32 years equivalent experience      │"
+          echo "└─────────────────────────────────────────────────────────────┘"
+          echo ""
+          echo "::endgroup::"
+          echo "::notice title=Check 8 PASSED::Education — Sheridan College Software Engineering + 32 years industry experience ✅"
+
+          echo "CHECK8=PASS" >> "$GITHUB_ENV"
+
+      - name: "Check 9: GitHub & Copilot expertise (BONUS)"
+        run: |
+          echo "::group::🌟 BONUS: GitHub & Copilot expertise"
+          echo ""
+          echo "┌─────────────────────────────────────────────────────────────┐"
+          echo "│  BONUS REQUIREMENT: GitHub & Copilot expertise             │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  EVIDENCE:                                                 │"
+          echo "│  • Built MCP servers — the protocol powering Copilot      │"
+          echo "│  • Published \"Supercharge GitHub Copilot with Context7\"    │"
+          echo "│  • This resume IS a GitHub repo with an MCP server        │"
+          echo "│  • Deep understanding of Copilot's architecture and       │"
+          echo "│    extensibility model                                    │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  ✅ PASS — Already building on GitHub's platform           │"
+          echo "└─────────────────────────────────────────────────────────────┘"
+          echo ""
+          echo "::endgroup::"
+          echo "::notice title=Check 9 PASSED (BONUS)::GitHub & Copilot — Built MCP servers, published Copilot articles, resume IS a GitHub repo with MCP server ✅"
+
+          echo "CHECK9=PASS" >> "$GITHUB_ENV"
+
+      - name: "📊 Qualification Validation Summary"
+        run: |
+          echo ""
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║            QUALIFICATION VALIDATION REPORT                  ║"
+          echo "║          GitHub Strategic AI GTM Lead, Americas             ║"
+          echo "║               Candidate: Mark Franco                       ║"
+          echo "╠══════════════════════════════════════════════════════════════╣"
+          echo "║  ✅ 7+ years pre-sales/consulting          19 years        ║"
+          echo "║  ✅ 5+ years AI/DevOps sales               19 years        ║"
+          echo "║  ✅ 5+ years cloud infrastructure          19 years        ║"
+          echo "║  ✅ Solution architecture design           Lead Arch       ║"
+          echo "║  ✅ ROI-driven sales                       Proven          ║"
+          echo "║  ✅ Technical fluency (AI/cloud)           127+ repos      ║"
+          echo "║  ✅ Leadership & stakeholder engagement    Speaker         ║"
+          echo "║  ✅ Education requirement                  32+ yrs exp     ║"
+          echo "║  ✅ GitHub & Copilot expertise (BONUS)     MCP Builder     ║"
+          echo "╠══════════════════════════════════════════════════════════════╣"
+          echo "║  RESULT: 9/9 PASSED — STRONG MATCH 🎯                     ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+          echo ""
+
+          PASSED=0
+          TOTAL=9
+          for i in $(seq 1 $TOTAL); do
+            VAR="CHECK${i}"
+            if [ "${!VAR}" = "PASS" ]; then
+              PASSED=$((PASSED + 1))
+            fi
+          done
+
+          echo "::notice title=FINAL RESULT::${PASSED}/${TOTAL} qualifications PASSED — STRONG MATCH for GitHub Strategic AI GTM Lead 🎯"
+
+          if [ "$PASSED" -ne "$TOTAL" ]; then
+            echo "::error::Only ${PASSED}/${TOTAL} checks passed"
+            exit 1
+          fi
+
+      - name: "📦 Generate JSON Summary Artifact"
+        run: |
+          mkdir -p artifacts
+          cat > artifacts/qualification-report.json << 'JSONEOF'
+          {
+            "report": {
+              "title": "Qualification Validation Report",
+              "role": "GitHub Strategic AI GTM Lead, Americas",
+              "candidate": "Mark Franco",
+              "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+              "result": "STRONG MATCH"
+            },
+            "checks": [
+              {
+                "id": 1,
+                "requirement": "7+ years in sales, pre-sales, or technical consulting",
+                "evidence": "19 years at Microsoft as Principal Solution Engineer (pre-sales/technical consulting)",
+                "years_required": 7,
+                "years_actual": 19,
+                "status": "PASS"
+              },
+              {
+                "id": 2,
+                "requirement": "5+ years selling developer automation, AI, CI/CD, DevOps",
+                "evidence": "19 years at Microsoft delivering AI, DevOps, and developer automation solutions. Led many AI engagements in past year alone.",
+                "years_required": 5,
+                "years_actual": 19,
+                "status": "PASS"
+              },
+              {
+                "id": 3,
+                "requirement": "5+ years selling/co-selling cloud infrastructure (Azure, AWS, GCP)",
+                "evidence": "Azure Solutions Architect Expert certified. 19 years on Azure platform. Led competitive cloud displacement engagements.",
+                "years_required": 5,
+                "years_actual": 19,
+                "status": "PASS"
+              },
+              {
+                "id": 4,
+                "requirement": "Solution architecture design experience",
+                "evidence": "Lead Architect at Microsoft Innovation Hub. 127+ GitHub repos demonstrating hands-on architecture. Led Architecture Design Sessions for enterprise customers.",
+                "status": "PASS"
+              },
+              {
+                "id": 5,
+                "requirement": "ROI-driven sales experience",
+                "evidence": "Generated measurable monthly Azure consumption revenue. Identified multi-million dollar AI value pipelines. Produced KPI-driven business cases.",
+                "status": "PASS"
+              },
+              {
+                "id": 6,
+                "requirement": "High technical fluency in AI, developer platforms, cloud",
+                "evidence": "127+ GitHub repos. MCP Protocol implementations. Agentic AI systems. Azure AI Foundry, OpenAI, Semantic Kernel, LangChain. C#, Python, TypeScript.",
+                "status": "PASS"
+              },
+              {
+                "id": 7,
+                "requirement": "Strong leadership and stakeholder engagement",
+                "evidence": "Featured speaker AI Tour Toronto. Mentored peer architects. Created reusable assets adopted Americas-wide. Led executive business envisioning sessions.",
+                "status": "PASS"
+              },
+              {
+                "id": 8,
+                "requirement": "Bachelor's degree or equivalent experience",
+                "evidence": "Sheridan College Software Engineering + 32 years industry experience",
+                "status": "PASS"
+              },
+              {
+                "id": 9,
+                "requirement": "GitHub & Copilot expertise (bonus)",
+                "evidence": "Built MCP servers (the protocol powering Copilot). Published 'Supercharge GitHub Copilot with Context7'. This resume IS a GitHub repo with an MCP server.",
+                "bonus": true,
+                "status": "PASS"
+              }
+            ],
+            "summary": {
+              "total_checks": 9,
+              "passed": 9,
+              "failed": 0,
+              "pass_rate": "100%",
+              "recommendation": "STRONG MATCH — Candidate exceeds requirements across all dimensions"
+            }
+          }
+          JSONEOF
+
+          echo "✅ JSON report generated at artifacts/qualification-report.json"
+          cat artifacts/qualification-report.json
+
+      - name: Upload Qualification Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: qualification-report
+          path: artifacts/qualification-report.json
+          retention-days: 90
+
+  generate-badge:
+    name: 🏅 Generate Qualification Badge
+    runs-on: ubuntu-latest
+    needs: validate-qualifications
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate Badge URL
+        run: |
+          BADGE_URL="https://img.shields.io/badge/qualifications-9%2F9%20passed-brightgreen?style=for-the-badge&logo=github&logoColor=white"
+          echo "Badge URL: $BADGE_URL"
+          echo "$BADGE_URL" > badge-url.txt
+          echo ""
+          echo "┌─────────────────────────────────────────────────────────────┐"
+          echo "│  🏅 Qualification Badge Generated                          │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  Badge: qualifications — 9/9 passed — brightgreen         │"
+          echo "│  Style: for-the-badge                                     │"
+          echo "│  Logo:  GitHub                                            │"
+          echo "├─────────────────────────────────────────────────────────────┤"
+          echo "│  Markdown usage:                                          │"
+          echo "│  ![Qualifications](${BADGE_URL})                          │"
+          echo "└─────────────────────────────────────────────────────────────┘"
+          echo ""
+          echo "::notice title=Badge Generated::Qualification badge URL saved to badge-url.txt ✅"
+
+      - name: Upload Badge URL
+        uses: actions/upload-artifact@v4
+        with:
+          name: badge-url
+          path: badge-url.txt
+          retention-days: 90
