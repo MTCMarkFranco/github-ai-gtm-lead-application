@@ -8,7 +8,7 @@
   <a href="https://github.com/MTCMarkFranco/github-ai-gtm-lead-application/actions/workflows/validate-qualifications.yml">
     <img src="https://github.com/MTCMarkFranco/github-ai-gtm-lead-application/actions/workflows/validate-qualifications.yml/badge.svg" alt="Qualifications"/>
   </a>
-  <img src="https://img.shields.io/badge/qualifications-9%2F9%20passed-brightgreen?style=flat-square" alt="9/9 Passed"/>
+  <img src="https://img.shields.io/badge/%E2%9C%85%20qualifications-9%2F9%20passed-brightgreen?style=flat-square&logo=githubactions&logoColor=white" alt="9/9 Passed"/>
   <img src="https://img.shields.io/badge/experience-19%20years%20%40%20Microsoft-blue?style=flat-square" alt="19 Years"/>
   <img src="https://img.shields.io/badge/industry-32%2B%20years-purple?style=flat-square" alt="32+ Years"/>
   <img src="https://img.shields.io/badge/GitHub%20repos-127%2B-orange?style=flat-square" alt="127+ Repos"/>

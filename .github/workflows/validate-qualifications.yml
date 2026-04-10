@@ -1,14 +1,14 @@
-name: Validate Qualifications
+name: ✅ Validate Qualifications
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   validate-qualifications:
-    name: 🔍 Validate Qualifications
+    name: ✅ Validate Qualifications
     runs-on: ubuntu-latest
 
     steps:
